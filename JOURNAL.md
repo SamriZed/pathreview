@@ -26,7 +26,7 @@ I chose Tier 1, because this is my first open source contribution.
 
 ## Week 8 — Reproduction & solution planning
 
-**Reproduction commit link:** [link to commit documenting the reproduced issue]
+**Reproduction commit link:** [[link to commit documenting the reproduced issue](https://github.com/ascherj/pathreview/commit/51cf93bb114b1a7f54cf5f5de981ce71b3478e97)]
 
 **Reproduction steps:**
 1. Open the resume parser in Python and use these two text samples:
@@ -37,14 +37,16 @@ bad = "  Experience:\nSenior Dev\n\n  Education:\nBS CS"
 ```
 
 2. Run `_detect_sections()` on both samples.
+
 3. Confirm that the normal input returns detected sections like `['Experience', 'Education']`, while the input with leading spaces returns `[]`.
 
 **Reproduction summary:**
+
 I reproduced the issue by running the resume parser on text where section headers had leading spaces, such as `  Experience:` and `  Education:`. In that case, `_detect_sections()` missed those headers, while the same text without the leading spaces was detected correctly.
 
-**PLAN.md link:** [link to PLAN.md in your fork]
+**PLAN.md link:** [[link to PLAN.md in your fork](https://github.com/SamriZed/pathreview/blob/fix/147-resume-parser-detection-error/PLAN.md)]
 
 **Walkthrough video (recommended):** [link to your Loom video, ≤2 min — recommended, not graded]
 
 **Blockers or open questions:**
-[Anything you're still uncertain about going into Week 9, or leave blank]
+No blockers right now. My only open question is whether we should match leading tabs as well as spaces in section headers and add a regression test for both.
