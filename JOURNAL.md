@@ -84,3 +84,35 @@ A fix for `_detect_sections()` in `ingestion/parsers/resume_parser.py`. Its four
 Left unchecked honestly: these targets are already red on a clean checkout, independent of my change. On pristine `main` (commit `d5f196d`) `make test-unit` reports **53 failures**; on my branch it reports **50** (I added 3 passing tests and introduced no new failures). `make lint` (177 errors) and `make typecheck` (3 errors) also fail on both `main` and my branch, all in files this PR does not touch. My new tests pass and my two changed files pass `ruff`/`black`.
 
 **Draft PR feedback received from:** none
+
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [ x ] No — feedback
+
+**Summary of feedback:**
+No review came in before the deadline, so there was no reviewer feedback to address.
+
+**How you responded:**
+N/A — no feedback was received.
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+I chose a Tier 1 issue because it was my first time working in a large codebase, and I assumed the code change itself would be the hard part. It turned out to be the opposite. The actual fix was small, but writing the PLAN and JOURNAL, filling out the PR template, and documenting every change with clear reasoning took the majority of my time. Explaining *why* my approach was the right one — not just getting it to work — was where most of the effort went.
+
+**What did you learn about working in a large codebase?**
+I learned to start early instead of waiting, because questions almost always come up partway through, and starting early leaves room to get clarification and still finish on time. I also learned how important it is to read the instructions carefully and to be able to justify my decisions: in someone else's production code you can't just make a change, you have to give convincing reasoning for why your fix is the best option so a reviewer can trust it.
+
+**How did AI tools help — and where did they fall short?**
+AI was very helpful throughout this project — it guided me through opening the pull request and other steps I hadn't done before. Where it fell short was pacing. When I wanted to implement my change one piece at a time and asked for help, it tended to try to change many things at once, even after I asked it to fix things one at a time so I could follow along. I handled this by stopping the session and re-prompting it to slow down and show me everything it planned to do before I approved anything, which kept me in control and made sure I actually understood each step.
+
+**What would you do differently if you started over?**
+I would reach out to the CodePath team earlier for feedback, and I'd spend more time getting `make test-unit` and `make check` to pass, since I lost some points there. Aside from that, I feel good about how the rest of the work came together.
+
+**What are you most proud of from this module?**
+Being able to contribute to a large, real project has been a huge experience, and I'm grateful for the opportunity. I now have a genuine sense of what contributing to a large codebase looks like — from picking an issue and reproducing it, to planning, fixing, testing, and opening a well-documented pull request.
